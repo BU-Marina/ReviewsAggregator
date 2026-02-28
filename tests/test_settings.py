@@ -1,4 +1,4 @@
-from api_yamdb import settings
+from config import settings
 
 
 class TestSettings:

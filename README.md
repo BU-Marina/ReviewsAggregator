@@ -1,6 +1,6 @@
-# Проект YaMDb
+# Проект ReviewsAggregator
 
-[![CI](https://github.com/BU-Marina/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg?branch=master)](https://github.com/BU-Marina/yamdb_final/actions/workflows/yamdb_workflow.yml)
+[![CI](https://github.com/BU-Marina/ReviewsAggregator/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/BU-Marina/ReviewsAggregator/actions/workflows/ci.yml)
 
 Собираются пользовательские отзывы на произведения по категориям (книги, фильмы и музыка).
 
@@ -18,14 +18,14 @@
 
 ## Запуск приложения в контейнерах
 
-Выполнить из директории с файлом docker-compose.yaml
+Выполнить из директории с файлом docker-compose_local.yaml
 
 ```
-docker-compose up -d
+docker-compose -f docker-compose_local.yml up -d --build
 ```
 
-## Заполнение БД начальными данными
+Остановить и удалить контейнеры и volumes:
 
 ```
-docker-compose exec web python manage.py loaddata fixtures.json
+docker-compose -f docker-compose_local.yml down -v
 ```
